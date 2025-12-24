@@ -10,6 +10,10 @@ app.use(express.json());
 app.get("/webhook", verifyWebhook);
 app.post("/webhook", receiveMessage);
 
+app.get("/", (req, res) => {
+    res.send("WhatsApp bot running");
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
